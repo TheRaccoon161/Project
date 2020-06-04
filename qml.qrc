@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>C:/Users/Alexander/Pictures/персонаж.png</file>
+        <file>png-transparent-color-drawing-headphones-illustration-musical-note-game-photography-stage.png</file>
+    </qresource>
+</RCC>
