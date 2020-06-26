@@ -7,7 +7,6 @@
 #include <tray.h>
 #include <qmltranslator.h>
 #include <save.h>
-#include <Mymodel.h>
 
 int main(int argc, char *argv[])
 {
@@ -20,11 +19,8 @@ int main(int argc, char *argv[])
     QQmlContext * context = engine.rootContext();
     QmlTranslator qmlTranslator;
     Save * saves= new Save();
-    MyModel mymodel;
 
     qmlTranslator.setTranslation(saves->langugeLoad());;
-
-    qmlRegisterType<MyModel>("model",1,0,"MyModel");
 
     context->setContextProperty("systemTray", systemTray);
 
