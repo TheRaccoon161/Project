@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>play-button.png</file>
+        <file>png-transparent-color-drawing-headphones-illustration-musical-note-game-photography-stage.png</file>
+        <file>russia.png</file>
+        <file>united-states.png</file>
+        <file>Gitar.png</file>
+        <file>sumbol.png</file>
+    </qresource>
+</RCC>
