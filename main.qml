@@ -216,7 +216,6 @@ ApplicationWindow {
         anchors.right: parent.right
         anchors.margins: 5
 
-        // При изменении текста, инициализируем установку перевода через С++ слой
         onClicked: {
             if(language=="en_US"){
                 language="ru_RU"
@@ -312,9 +311,9 @@ ApplicationWindow {
     }
 
     Connections {
-        target: qmlTranslator   // был зарегистрирован в main.cpp
-        onLanguageChanged: {    // при получении сигнала изменения языка
-            retranslateUi()     // инициализируем перевод интерфейса
+        target: qmlTranslator 
+        onLanguageChanged: { 
+            retranslateUi()
         }
     }
 
