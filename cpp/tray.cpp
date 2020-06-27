@@ -8,32 +8,22 @@
 Tray::Tray(QObject *parent) : QObject(parent)
 {
 
-    // Создаём контекстное меню с двумя пунктами
     trayIconMenu = new QMenu();
 
-    /* Инициализируем иконку трея, устанавливаем иконку,
-     * а также задаем всплывающую подсказку
-     * */
     trayIcon = new QSystemTrayIcon();
     setTranslation();
     trayIcon->setIcon(QIcon(":/play-button.png"));
     trayIcon->show();
     trayIcon->setToolTip("MediaPlayer");
 
-    /* Также подключаем сигнал нажатия на иконку к обработчику
-     * данного нажатия
-     * */
     connect(trayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
             this, SLOT(iconActivated(QSystemTrayIcon::ActivationReason)));
 }
 
-/* Метод, который обрабатывает нажатие на иконку приложения в трее
- * */
 void Tray::iconActivated(QSystemTrayIcon::ActivationReason reason)
 {
     switch (reason){
     case QSystemTrayIcon::Trigger:
-        // В случае сигнала нажатия на иконку трея вызываем сигнал в QML слой
         emit signalIconActivated();
         break;
     default:
