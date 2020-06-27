@@ -13,7 +13,6 @@ class Tray : public QObject
 public:
     explicit Tray(QObject *parent = 0);
 
-    // Сигналы от системного трея
 signals:
     void signalIconActivated();
     void signalShow();
@@ -22,9 +21,6 @@ signals:
     void signalPrevious();
 
 private slots:
-    /* Слот, который будет принимать сигнал от события
-     * нажатия на иконку приложения в трее
-     */
     void iconActivated(QSystemTrayIcon::ActivationReason reason);
 
 public slots:
@@ -33,7 +29,6 @@ public slots:
     void setTranslation();
 
 private:
-    /* Объявляем объект будущей иконки приложения для трея */
     QSystemTrayIcon         * trayIcon;
     QMenu                   * trayIconMenu;
 };
